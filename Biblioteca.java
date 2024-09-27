@@ -85,7 +85,7 @@ public class Biblioteca {
         boolean encontrado = false;
         for (Revista revista : revistas) {
             if (revista.getTitulo().toLowerCase().contains(titulo.toLowerCase())) {
-                revista.mostrarLivrosRevistas();
+                revista.mostrarNumeroRevistas();
                 encontrado = true;
                 break;
             }

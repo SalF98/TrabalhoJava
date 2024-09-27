@@ -12,9 +12,12 @@ public class Main {
 			// Menu principal
 			System.out.println("\nBem-vindo ao sistema de gerenciamento da BibliotecaXYZ!");
 			System.out.println(
-					"Escolha o que gostaria de fazer (Escolha com Números)\n" + "[1] Adicionar Novo Livro ou Revista\n"
-							+ "[2] Pesquisar Livro/Revista por Título\n" + "[3] Excluir Livro/Revista pelo Título\n"
-							+ "[4] Listagem de Livros e Revistas\n" + "[5] Sair do Sistema\n");
+					"Escolha o que gostaria de fazer (Escolha com Números)\n" 
+					+ "[1] Adicionar Novo Livro ou Revista\n"
+					+ "[2] Pesquisar Livro/Revista por Título\n" 
+					+ "[3] Excluir Livro/Revista pelo Título\n"
+					+ "[4] Listagem de Livros e Revistas\n" 
+					+ "[5] Sair do Sistema\n");
 			int escolhaMenu = scanner.nextInt();
 			scanner.nextLine();
 
@@ -22,7 +25,8 @@ public class Main {
 			if (escolhaMenu == 1) {
 				System.out.println("Você gostaria de adicionar [1] Livros ou [2] Revistas?");
 				int escolhaAdicionar = scanner.nextInt();
-				if (escolhaAdicionar == 1) {
+				scanner.nextLine();
+;				if (escolhaAdicionar == 1) {
 					System.out.println("Qual livro você gostaria de adicionar ao sistema?");
 					String livroTitulo = scanner.nextLine();
 
@@ -115,6 +119,7 @@ public class Main {
 			} else if (escolhaMenu == 4) {
 				System.out.println("Você gostaria de listar [1] Livros ou [2] Revistas?");
 				int escolhaLivroRevista = scanner.nextInt();
+				scanner.nextLine();
 
 				if (escolhaLivroRevista == 1) {
 					biblioteca.mostrarLivros();
