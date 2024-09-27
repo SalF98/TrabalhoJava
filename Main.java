@@ -11,13 +11,12 @@ public class Main {
 		while (true) {
 			// Menu principal
 			System.out.println("\nBem-vindo ao sistema de gerenciamento da BibliotecaXYZ!");
-			System.out.println(
-					"Escolha o que gostaria de fazer (Escolha com Números)\n" 
-					+ "[1] Adicionar Novo Livro ou Revista\n"
-					+ "[2] Pesquisar Livro/Revista por Título\n" 
-					+ "[3] Excluir Livro/Revista pelo Título\n"
-					+ "[4] Listagem de Livros e Revistas\n" 
-					+ "[5] Sair do Sistema\n");
+			System.out.println("Escolha o que gostaria de fazer (Escolha com Números)\n" 
+								+ "[1] Adicionar Novo Livro ou Revista\n"
+								+ "[2] Pesquisar Livro/Revista por Título\n" 
+								+ "[3] Excluir Livro/Revista pelo Título\n"
+								+ "[4] Listagem de Livros e Revistas\n" 
+								+ "[5] Sair do Sistema\n");
 			int escolhaMenu = scanner.nextInt();
 			scanner.nextLine();
 
@@ -26,7 +25,8 @@ public class Main {
 				System.out.println("Você gostaria de adicionar [1] Livros ou [2] Revistas?");
 				int escolhaAdicionar = scanner.nextInt();
 				scanner.nextLine();
-;				if (escolhaAdicionar == 1) {
+				;
+				if (escolhaAdicionar == 1) {
 					System.out.println("Qual livro você gostaria de adicionar ao sistema?");
 					String livroTitulo = scanner.nextLine();
 
@@ -68,19 +68,21 @@ public class Main {
 
 					biblioteca.adicionarLivro(livroTitulo, livroAutor, livroAno, genero);
 
-				}else if (escolhaAdicionar == 2) {
+				} else if (escolhaAdicionar == 2) {
 					System.out.println("Qual revista você gostaria de adicionar ao sistema?");
 					String revistaTitulo = scanner.nextLine();
 
 					System.out.println("Quem escreveu a revista?");
 					String revistaAutor = scanner.nextLine();
-					
+
 					System.out.println("Qual o número ou edição da revista");
 					int revistaNumero = scanner.nextInt();
 					scanner.nextLine();
-					
+
 					biblioteca.adicionarRevista(revistaTitulo, revistaAutor, revistaNumero);
-					
+
+				} else {
+					System.out.println("Escolha Inválida! Voltando ao menu...");
 				}
 
 				// Pesquisar livro/revista
@@ -93,12 +95,14 @@ public class Main {
 					System.out.println("Digite o título do livro:");
 					String livroPesquisa = scanner.nextLine();
 					biblioteca.pesquisarLivro(livroPesquisa);
+
 				} else if (escolhaPesquisa == 2) {
 					System.out.println("Digite o título da revista:");
 					String revistaPesquisa = scanner.nextLine();
 					biblioteca.pesquisarRevista(revistaPesquisa);
+
 				} else {
-					System.out.println("Escolha Inválida!");
+					System.out.println("Escolha Inválida! Voltando ao menu...");
 				}
 
 				// Excluir livro/revista
@@ -109,10 +113,15 @@ public class Main {
 
 				if (escolhaExclusao == 1) {
 					System.out.println("Digite o título do livro a ser excluído:");
-					biblioteca.excluirLivro(scanner.nextLine());
+					String livroExcluir = scanner.nextLine();
+					biblioteca.excluirLivro(livroExcluir);
+
 				} else if (escolhaExclusao == 2) {
 					System.out.println("Digite o título da revista a ser excluída:");
-					biblioteca.excluirRevista(scanner.nextLine());
+					String revistaExcluir = scanner.nextLine();
+					biblioteca.excluirRevista(revistaExcluir);
+				} else {
+					System.out.println("Escolha Inválida! Voltando ao menu...");
 				}
 
 				// Listar livros/revistas
@@ -134,7 +143,7 @@ public class Main {
 				System.out.println("Saindo...");
 				break;
 			} else {
-				System.out.println("Escolha inválida");
+				System.out.println("Escolha inválida, tente novamente!");
 			}
 		}
 		scanner.close();

@@ -11,6 +11,6 @@ class Revista extends Material {
 
 	public void mostrarNumeroRevistas() {
 		super.mostrarLivrosRevistas();
-			System.out.println("Número: " + numero);
+		System.out.println("Número: " + numero);
 		}
 	}
